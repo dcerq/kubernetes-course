@@ -9,4 +9,8 @@ spec:
     - name: db-noticias-container
       image: aluracursos/mysql-db:1
       ports:  
-        - containerPort: 3306 #o container dessa aplicação é executado na porta 3306
+        - containerPort: 3306 
+      envFrom:
+      - configMapRef:
+          name: db-configmap
+     
